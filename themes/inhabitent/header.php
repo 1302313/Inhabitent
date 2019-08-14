@@ -15,7 +15,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-	<!-- Avoid linking CSS and JS here. Add to functiopns -->
+	<!-- Avoid linking CSS and JS here. Add to functions -->
 	<?php wp_head(); ?>
 </head>
 
@@ -33,6 +33,8 @@
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo esc_html('Primary Menu'); ?></button>
 				<?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
 			</nav><!-- #site-navigation -->
+
+			<?php get_search_form() ?>
 		</header><!-- #masthead -->
 
 		<div id="content" class="site-content">
