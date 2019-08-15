@@ -222,6 +222,84 @@ td,
 th {
   padding: 0; }
 
+.site-header {
+  background-color: black;
+  height: 25vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .site-header .site-branding {
+    width: 25%;
+    height: 25%; }
+  .site-header .main-navigation .menu-toggle {
+    margin: 0 auto;
+    background-color: #248A83;
+    border-radius: 1rem 0;
+    color: #2d2d2d; }
+  .site-header .main-navigation .menu-main-menu-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .site-header .main-navigation .menu-main-menu-container .nav-menu {
+      width: 30%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row wrap;
+              flex-flow: row wrap;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+  .site-header .search-form {
+    width: 30%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .site-header .search-form .search-submit {
+      position: absolute;
+      -webkit-transform: translateX(-4rem);
+              transform: translateX(-4rem);
+      margin: 0 auto;
+      border: none;
+      padding: none;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      background: transparent;
+      border-radius: 3rem; }
+
+.site-footer {
+  width: 100%;
+  height: 10vh;
+  background: url("../../images/dark-wood.png"); }
+  .site-footer .site-info a {
+    color: #fff; }
+
 /*--------------------------------------------------------------
 # Embedded Fonts
 --------------------------------------------------------------*/
@@ -420,11 +498,11 @@ textarea {
 --------------------------------------------------------------*/
 /* Links */
 a {
-  color: royalblue; }
+  color: #248A83; }
   a:visited {
-    color: purple; }
+    color: #3ef8ec; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #d99054; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -669,4 +747,17 @@ object {
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
-/* Front page */
+/* All Pages - Common Design */
+/* Front Page */
+/* About Page */
+/* Shop Page - Archive */
+/* Product Type Page - Archive */
+/* Single Product Page */
+/* Journal */
+/* Single Journal Post
+
+/* Contact Page */
+/* Search result Page */
+/* Adventures Page - Archive */
+/* Single Adventure Post */
+/* 404 Page */

@@ -1,0 +1,73 @@
+.site-header {
+    background-color: black;
+    height: 25vh;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    .site-branding {
+
+        width: 25%;
+        height: 25%;
+        // justify-self: flex-start;
+    }
+
+    .main-navigation {
+
+        .menu-toggle {
+            margin: 0 auto;
+            background-color: #248A83;
+            border-radius: 1rem 0;
+            color: #2d2d2d;
+
+
+            &:hover {}
+        }
+
+        .menu-main-menu-container {
+
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+
+            .nav-menu {
+                width: 30%;
+
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+
+
+                .menu-item {}
+            }
+        }
+    }
+
+    .search-form {
+
+        width: 30%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+
+        .search-field {}
+
+        .search-submit {
+
+            position: absolute;
+            transform: translateX(-4rem);
+            margin: 0 auto;
+            border: none;
+            padding: none;
+            box-shadow: none;
+
+            background: transparent;
+
+            border-radius: 3rem;
+
+        }
+    }
+
+}

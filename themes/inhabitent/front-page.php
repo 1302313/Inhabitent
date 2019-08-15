@@ -37,7 +37,7 @@ get_header(); ?>
             ?>
 
         </section>
-        <!-- Section: Inhabitent Journal -->
+        <!-- Section: Inhabitent Front Page -->
         <?php
         $args = array(
             'post_type'         => 'post',
@@ -79,6 +79,7 @@ get_header(); ?>
             endforeach; ?>
             <?php wp_reset_postdata() ?>
         <?php endif; ?>
+
         <!-- Section: Latest Adventures -->
 
 
