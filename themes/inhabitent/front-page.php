@@ -10,77 +10,88 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+
         <!-- Section: Shop Stuff -->
         <section class="product-info container">
             <h2>Shop Stuff</h2>
 
             <?php
+            // Get the Args
             $args = [
                 'taxonomy' => 'product-type',
                 'hide_empty' => false,
             ];
-
+            // Set the Args
             $terms = get_terms($args);
 
-
-            // var_dump(get_template_directory());
-            // var_dump(get_template_directory_uri());
-
+            echo '<div class="front-page-shop-category-container">';
             foreach ($terms as $term) {
+                echo '<div class="front-page-shop-category">';
                 $icon = get_template_directory_uri() . '/images/product-type-icons/' . $term->slug . '.svg';
-
                 echo '<img src="' . $icon . '" />';
-                echo $term->name;
-                echo $term->description;
-                echo get_term_link($term);
+
+                $name = $term->name;
+                echo '<p>' . $name . '</p>';
+
+                $description = $term->description;
+                echo '<p>' . $description . '</p>';
+
+                echo '<a href="' . get_term_link($term) . '">' . $name . ' Stuff</a>';
+                echo "</div>";
             }
+            echo '</div>'
+            ?>
+        </section>
+
+        <!-- Section: Inhabitent Posts -->
+        <section class="journal-info-container">
+            <h2>Inhabitent Journal</h2>
+            <?php
+            $args = array(
+                'post_type'         => 'post',
+                'order'             => 'DESC',
+                'orderby'          => 'date',
+                'numberposts'       => '3',
+            );
+
+            $querys = get_posts($args);
             ?>
 
-        </section>
-        <!-- Section: Inhabitent Front Page -->
-        <?php
-        $args = array(
-            'post_type'         => 'post',
-            'order'             => 'DESC',
-            'numberposts'       => '3',
-        );
+            <?php if (have_posts()) : ?>
 
-        $querys = get_posts($args);
-        ?>
+                <?php if (is_home() && !is_front_page()) : ?>
+                    <header>
+                        <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+                    </header>
+                <?php endif; ?>
 
-        <?php if (have_posts()) : ?>
+                <?php /* Start the Loop */ ?>
+                <?php while (have_posts()) : the_post(); ?>
 
-            <?php if (is_home() && !is_front_page()) : ?>
-                <header>
-                    <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-                </header>
-            <?php endif; ?>
+                    <?php foreach ($querys as $post) :
+                        setup_postdata($post);
+                        get_template_part('template-parts/content', 'single');
+                    endforeach; ?>
 
-            <?php /* Start the Loop */ ?>
-            <?php while (have_posts()) : the_post(); ?>
+                    <?php wp_reset_postdata() ?>
 
+
+                    <?php get_template_part('template-parts/content'); ?>
+
+                <?php endwhile; ?>
+
+                <?php the_posts_navigation(); ?>
+
+            <?php else : ?>
                 <?php foreach ($querys as $post) :
                     setup_postdata($post);
-                    get_template_part('template-parts/content', 'single');
+                    get_template_part('template-parts/content', 'none');
+
                 endforeach; ?>
-
                 <?php wp_reset_postdata() ?>
-                <?php get_template_part('template-parts/content'); ?>
+            <?php endif; ?>
 
-            <?php endwhile; ?>
-
-            <?php the_posts_navigation(); ?>
-
-        <?php else : ?>
-            <?php foreach ($querys as $post) :
-                setup_postdata($post);
-                get_template_part('template-parts/content', 'none');
-
-            endforeach; ?>
-            <?php wp_reset_postdata() ?>
-        <?php endif; ?>
-
-        <!-- Section: Latest Adventures -->
+            <!-- Section: Latest Adventures -->
 
 
     </main><!-- #main -->
