@@ -222,9 +222,12 @@ td,
 th {
   padding: 0; }
 
+/* Main Header */
 .site-header {
-  background-color: black;
-  height: 25vh;
+  background-color: transparent;
+  padding: 1.5rem -0.75 3rem;
+  position: absolute;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -237,13 +240,12 @@ th {
           align-items: center; }
   .site-header .site-branding {
     width: 25%;
-    height: 25%; }
-  .site-header .main-navigation .menu-toggle {
-    margin: 0 auto;
-    background-color: #248A83;
-    border-radius: 1rem 0;
-    color: #2d2d2d; }
-  .site-header .main-navigation .menu-main-menu-container {
+    height: 25%;
+    -webkit-box-flex: 25%;
+        -ms-flex: 25%;
+            flex: 25%; }
+  .site-header .site-header-container {
+    width: 75%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -253,9 +255,62 @@ th {
             flex-flow: row wrap;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center; }
-    .site-header .main-navigation .menu-main-menu-container .nav-menu {
-      width: 30%;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* Site Navigation */
+    /* Site Search Form */ }
+    .site-header .site-header-container .main-navigation {
+      width: 85%;
+      padding: 0 2rem;
+      -webkit-box-flex: 50%;
+          -ms-flex: 50%;
+              flex: 50%;
+      justify-self: flex-end;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end; }
+      .site-header .site-header-container .main-navigation .menu-toggle {
+        margin: 0 auto;
+        background-color: #248A83;
+        border-radius: 1rem 0;
+        color: #2d2d2d; }
+      .site-header .site-header-container .main-navigation .menu-main-menu-container {
+        width: 75%;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end; }
+        .site-header .site-header-container .main-navigation .menu-main-menu-container .nav-menu {
+          width: 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+              -ms-flex-flow: row wrap;
+                  flex-flow: row wrap;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center; }
+          .site-header .site-header-container .main-navigation .menu-main-menu-container .nav-menu .menu-item {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-item-align: center;
+                align-self: center;
+            -webkit-box-pack: end;
+                -ms-flex-pack: end;
+                    justify-content: flex-end; }
+    .site-header .site-header-container .search-form {
+      padding: 0 0.5rem;
+      justify-self: flex-end;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -263,11 +318,80 @@ th {
       -webkit-box-direction: normal;
           -ms-flex-flow: row wrap;
               flex-flow: row wrap;
-      -webkit-box-pack: justify;
-          -ms-flex-pack: justify;
-              justify-content: space-between; }
-  .site-header .search-form {
-    width: 30%;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .site-header .site-header-container .search-form .search-field {
+        height: 2vh;
+        margin: 0.5rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        text-indent: 25%;
+        vertical-align: center;
+        background: transparent;
+        border: none;
+        color: #fff;
+        text-shadow: 1px 1px 2px #d99054, 0 0 1em #248A83, 0 0 0.2em #248A83; }
+      .site-header .site-header-container .search-form .search-submit {
+        position: absolute;
+        -webkit-transform: translateX(-4rem);
+                transform: translateX(-4rem);
+        margin: 0 auto;
+        border: none;
+        padding: none;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        background: transparent;
+        border-radius: 3rem; }
+        .site-header .site-header-container .search-form .search-submit .icon-search {
+          padding: 0; }
+          .site-header .site-header-container .search-form .search-submit .icon-search i {
+            padding: 0; }
+
+.site-footer {
+  width: 100%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url("../../images/dark-wood.png"); }
+  .site-footer a {
+    color: #fff;
+    text-decoration: none; }
+  .site-footer a:visited {
+    color: #fff; }
+  .site-footer a:hover,
+  .site-footer a:focus,
+  .site-footer a:active {
+    color: #fff; }
+  .site-footer a:focus {
+    outline: thin dotted; }
+  .site-footer a:hover,
+  .site-footer a:active {
+    outline: 0; }
+  .site-footer h3 {
+    color: #d99054; }
+  .site-footer .site-footer-container {
+    width: 80%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -281,24 +405,51 @@ th {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
-    .site-header .search-form .search-submit {
-      position: absolute;
-      -webkit-transform: translateX(-4rem);
-              transform: translateX(-4rem);
+    .site-footer .site-footer-container .site-footer-contact-info {
+      width: 20%;
+      padding-left: 2rem;
+      -webkit-box-flex: 15%;
+          -ms-flex: 15%;
+              flex: 15%;
+      justify-self: flex-start; }
+    .site-footer .site-footer-container .site-footer-business-hours {
+      width: 25%;
+      -webkit-box-flex: 30%;
+          -ms-flex: 30%;
+              flex: 30%;
+      justify-self: flex-start; }
+    .site-footer .site-footer-container .site-footer-logo-container {
+      width: 50%;
+      -webkit-box-flex: 1;
+          -ms-flex: 1 0 50%;
+              flex: 1 0 50%;
+      justify-self: flex-end;
+      align-self: flex-start;
+      padding-top: 2rem;
+      padding-right: 3rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); }
+      .site-footer .site-footer-container .site-footer-logo-container .site-footer-logo {
+        margin: 0 auto;
+        width: 15rem;
+        grid-column: 2 / 3;
+        /* Short hand */ }
+    .site-footer .site-footer-container .site-footer-info {
+      width: 1240px;
       margin: 0 auto;
-      border: none;
-      padding: none;
-      -webkit-box-shadow: none;
-              box-shadow: none;
-      background: transparent;
-      border-radius: 3rem; }
-
-.site-footer {
-  width: 100%;
-  height: 10vh;
-  background: url("../../images/dark-wood.png"); }
-  .site-footer .site-info a {
-    color: #fff; }
+      padding: 0.5rem;
+      -webkit-box-flex: 1;
+          -ms-flex: 1 0 100%;
+              flex: 1 0 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
 
 /*--------------------------------------------------------------
 # Embedded Fonts
@@ -312,20 +463,39 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: Merriweather Web, serif;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 1.5; }
+  line-height: 1.75; }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
-  clear: both; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+  font-family: Novecento Sans Web, sans-serif; }
+
+h1,
+h2 {
+  line-height: 1.25; }
+
+h2 {
+  color: #2f1339;
+  font-size: 33.6px;
+  font-size: 2.1rem;
+  margin-bottom: 1.5rem; }
 
 /* Copy */
 p {
   margin-bottom: 1.5rem; }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
   font-style: italic; }
 
 blockquote {
@@ -345,16 +515,21 @@ pre {
   overflow: auto;
   padding: 1.6rem; }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   font-size: 15px;
   font-size: 0.9375rem; }
 
-abbr, acronym {
+abbr,
+acronym {
   border-bottom: 1px dotted #666;
   cursor: help; }
 
-mark, ins {
+mark,
+ins {
   background: #fff9c0;
   text-decoration: none; }
 
@@ -444,7 +619,6 @@ input[type="submit"] {
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 1;
-  padding: .6rem 1rem .4rem;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
   button:hover,
   input[type="button"]:hover,
@@ -500,7 +674,7 @@ textarea {
 a {
   color: #248A83; }
   a:visited {
-    color: #3ef8ec; }
+    color: #248A83; }
   a:hover, a:focus, a:active {
     color: #d99054; }
   a:focus {
@@ -668,6 +842,9 @@ a {
 .entry-summary {
   margin: 1.5rem 0 0; }
 
+.entry-content {
+  margin: 0; }
+
 .page-links {
   clear: both;
   margin: 0 0 1.5rem; }
@@ -747,17 +924,72 @@ object {
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
-/* All Pages - Common Design */
-/* Front Page */
-/* About Page */
-/* Shop Page - Archive */
-/* Product Type Page - Archive */
-/* Single Product Page */
-/* Journal */
-/* Single Journal Post
+.site-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: auto;
+  /* All Pages - Common Design */
+  /* Front Page */
+  /* About Page */
+  /* Shop Page - Archive */
+  /* Product Type Page - Archive */
+  /* Single Product Page */
+  /* Journal */
+  /* Single Journal Post
 
 /* Contact Page */
-/* Search result Page */
-/* Adventures Page - Archive */
-/* Single Adventure Post */
-/* 404 Page */
+  /* Search result Page */
+  /* Adventures Page - Archive */
+  /* Single Adventure Post */
+  /* 404 Page */ }
+  .site-content .content-area {
+    width: 100%; }
+  .site-content body {
+    height: 100vh; }
+  .site-content a {
+    color: #248A83; }
+    .site-content a:visited {
+      color: #248A83; }
+    .site-content a:hover, .site-content a:focus, .site-content a:active {
+      color: #d99054; }
+    .site-content a:focus {
+      outline: thin dotted; }
+    .site-content a:hover, .site-content a:active {
+      outline: 0; }
+  .site-content .hfeed {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap; }
+  .site-content .page-about .entry-content h2 {
+    text-align: center; }
+  .site-content .hero-image-header {
+    height: 100vh;
+    font-family: Novecento Sans Web, sans-serif;
+    text-transform: uppercase; }
+    .site-content .hero-image-header h1 {
+      color: #fff;
+      font-family: Novecento Sans Web, sans-serif;
+      -ms-flex-item-align: center;
+          align-self: center;
+      text-shadow: 1px 1px 2px #d99054, 0 0 1em #248A83, 0 0 0.2em #248A83; }
+  .site-content .page-about-content {
+    padding: 3rem; }
+  .site-content .type-product .entry-title a {
+    color: #248A83; }
+    .site-content .type-product .entry-title a:visited {
+      color: #248A83; }
+    .site-content .type-product .entry-title a:hover, .site-content .type-product .entry-title a:focus, .site-content .type-product .entry-title a:active {
+      color: #d99054; }
+    .site-content .type-product .entry-title a:focus {
+      outline: thin dotted; }
+    .site-content .type-product .entry-title a:hover, .site-content .type-product .entry-title a:active {
+      outline: 0; }

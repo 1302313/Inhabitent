@@ -6,7 +6,8 @@ $base__space-unit: 1.5rem;
 
 $color__background-body: #fff;
 $color__text-main: #404040;
-$color__footer: #fff;
+$color__text-footer: #fff;
+$color__text-footer-h3: #d99054;
 
 $color__background-screen: #f1f1f1;
 $color__text-screen: #21759b;
@@ -17,12 +18,13 @@ $color__background-ins: #fff9c0;
 $color__border-abbr: #666;
 
 $color__link: #248A83;
-$color__link-visited: rgb(62, 248, 236);
+$color__link-visited: #248A83;
 $color__link-hover: #d99054;
 
 // Typography
 
-$font__main: sans-serif;
+$font__main: Merriweather Web,
+serif;
 $font__code: Monaco,
 Consolas,
 "Andale Mono",
@@ -31,5 +33,5 @@ monospace;
 $font__pre: "Courier 10 Pitch",
 Courier,
 monospace;
-$font__line-height-body: 1.5;
+$font__line-height-body: 1.75;
 $font__line-height-pre: 1.6;

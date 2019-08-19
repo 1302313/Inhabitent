@@ -1,34 +1,139 @@
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
+.site-content {
+
+    display: flex;
+    flex-flow: row wrap;
+    width: auto;
+
+    .content-area {
+        width: 100%;
+    }
 
 
-/* All Pages - Common Design */
 
 
 
-/* Front Page */
+    /* All Pages - Common Design */
+    body {
+        height: 100vh;
+    }
 
-/* About Page */
+    a {
+        color: $color__link;
 
-/* Shop Page - Archive */
+        &:visited {
+            color: $color__link-visited;
+        }
 
-/* Product Type Page - Archive */
+        &:hover,
+        &:focus,
+        &:active {
+            color: $color__link-hover;
+        }
 
-/* Single Product Page */
+        &:focus {
+            outline: thin dotted;
+        }
 
-/* Journal */
+        &:hover,
+        &:active {
+            outline: 0;
+        }
+    }
 
-/* Single Journal Post
+    .hfeed {
+        // height: 100vh;
+        display: flex;
+        flex-flow: column wrap;
+
+
+
+    }
+
+    /* Front Page */
+
+    /* About Page */
+
+    .page-about {
+
+        .entry-content {
+
+            h2 {
+                text-align: center;
+            }
+
+        }
+    }
+
+
+
+    .hero-image-header {
+        height: 100vh;
+        font-family: Novecento Sans Web, sans-serif;
+        text-transform: uppercase;
+
+        h1 {
+            color: #fff;
+            font-family: Novecento Sans Web, sans-serif;
+            align-self: center;
+            text-shadow: 1px 1px 2px #d99054, 0 0 1em #248A83, 0 0 0.2em #248A83;
+        }
+
+    }
+
+    .page-about-content {
+
+        padding: 3rem;
+    }
+
+
+    /* Shop Page - Archive */
+
+    /* Product Type Page - Archive */
+
+
+    .type-product .entry-title {
+        a {
+            color: $color__link;
+
+            &:visited {
+                color: $color__link-visited;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $color__link-hover;
+            }
+
+            &:focus {
+                outline: thin dotted;
+            }
+
+            &:hover,
+            &:active {
+                outline: 0;
+            }
+        }
+    }
+
+    /* Single Product Page */
+
+    /* Journal */
+
+    /* Single Journal Post
 
 /* Contact Page */
 
-/* Search result Page */
+    /* Search result Page */
 
-/* Adventures Page - Archive */
+    /* Adventures Page - Archive */
 
-/* Single Adventure Post */
+    /* Single Adventure Post */
 
 
 
-/* 404 Page */
+    /* 404 Page */
+}

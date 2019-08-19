@@ -1,20 +1,104 @@
 .site-footer {
+
     width: 100%;
-    height: 10vh;
-    // align-self: flex-end;
+    align-self: flex-end;
+
+    color: $color__text-footer;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
     // images/dark-wood@2x.png
     // background-color: skyblue;
     background: url('../../images/dark-wood.png');
 
-    .site-info {
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: #fff;
+    }
+
+    a:hover,
+    a:focus,
+    a:active {
+        color: #fff;
+    }
+
+    a:focus {
+        outline: thin dotted;
+    }
+
+    a:hover,
+    a:active {
+        outline: 0;
+    }
+
+    h3 {
+        color: $color__text-footer-h3;
+    }
+
+    .site-footer-container {
+        width: 80%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
 
 
-
-
-        a {
-            color: $color__footer;
+        .site-footer-contact-info {
+            width: 20%;
+            padding-left: 2rem;
+            flex: 15%;
+            justify-self: flex-start;
         }
 
+        .site-footer-business-hours {
+            width: 25%;
+            flex: 30%;
+            justify-self: flex-start;
+        }
+
+
+        .site-footer-logo-container {
+            width: 50%;
+            flex: 1 0 50%;
+            justify-self: flex-end;
+            align-self: flex-start;
+            padding-top: 2rem;
+            padding-right: 3rem;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            .site-footer-logo {
+                margin: 0 auto;
+                width: 15rem;
+                grid-column: 2 / 3;
+                /* Short hand */
+            }
+        }
+
+
+
+        .site-footer-info {
+            width: 1240px;
+            margin: 0 auto;
+            padding: 0.5rem;
+            flex: 1 0 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+
+
+        }
 
     }
 
