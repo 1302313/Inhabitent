@@ -338,7 +338,10 @@ th {
         background: transparent;
         border: none;
         color: #fff;
-        text-shadow: 1px 1px 2px #d99054, 0 0 1em #248A83, 0 0 0.2em #248A83; }
+        text-shadow: 1px 1px 2px #d99054, 0 0 1em #248A83, 0 0 0.2em #248A83;
+        display: none; }
+      .site-header .site-header-container .search-form .search-field-focus {
+        display: initial; }
       .site-header .site-header-container .search-form .search-submit {
         position: absolute;
         -webkit-transform: translateX(-4rem);
@@ -676,7 +679,7 @@ textarea {
 a {
   color: #248A83; }
   a:visited {
-    color: #248A83; }
+    color: #28b6ad; }
   a:hover, a:focus, a:active {
     color: #d99054; }
   a:focus {
@@ -813,10 +816,14 @@ a {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  margin: 0 0 1.5rem;
+  margin: 0 0 4.5rem;
   /* Make sure select elements fit in widgets. */ }
   .widget select {
     max-width: 100%; }
+  .widget .contact-meta i {
+    margin-right: 0.75rem; }
+  .widget .contact-meta a {
+    text-decoration: none; }
 
 /* Search widget. */
 .widget_search .search-submit {
@@ -938,7 +945,9 @@ object {
   min-width: 1000px;
   /* All Pages - Common Design */
   /* Front Page */
-  /* Shop Category Carousel */
+  /* Shop Category */
+  /* Journal Category */
+  /* Adventures Category */
   /* About Page */
   /* Shop Page - Archive */
   /* Product Type Page - Archive */
@@ -966,20 +975,36 @@ object {
   .site-content a {
     color: #248A83; }
     .site-content a:visited {
-      color: #248A83; }
+      color: #28b6ad; }
     .site-content a:hover, .site-content a:focus, .site-content a:active {
       color: #d99054; }
     .site-content a:focus {
       outline: thin dotted; }
     .site-content a:hover, .site-content a:active {
       outline: 0; }
+  .site-content .front-page-banner {
+    min-height: 100vh;
+    background: url("/Inhabitent/wp-content/themes/inhabitent/images/home-hero.jpg") no-repeat;
+    background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
   .site-content .product-info {
+    margin-top: 3rem;
     padding-bottom: 3rem; }
     .site-content .product-info h2 {
       text-align: center;
-      margin: 1rem auto; }
+      margin: 1.5rem auto; }
     .site-content .product-info .front-page-shop-category-container {
-      margin: 0 auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
       width: 960px;
       text-align: center;
       display: -webkit-box;
@@ -1005,6 +1030,9 @@ object {
           border-radius: 0 1rem;
           padding: 0.75rem;
           background: #248A83; }
+          .site-content .product-info .front-page-shop-category-container .front-page-shop-category a:hover a {
+            color: #fff;
+            background: #28b6ad; }
   .site-content .journal-info-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1030,7 +1058,9 @@ object {
               flex-flow: row wrap;
       width: 960px; }
       .site-content .journal-info-container .front-page-journal-container .front-page-post-container {
-        margin: 0 auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
         -webkit-box-flex: 0;
             -ms-flex: 0 1 30%;
                 flex: 0 1 30%;
@@ -1085,6 +1115,47 @@ object {
         .site-content .journal-info-container .front-page-journal-container .front-page-post-container .front-page-post-permalink:hover a {
           color: #fff;
           background: #248A83; }
+  .site-content .adventures-info-container h2 {
+    text-align: center;
+    margin: 1.5rem auto; }
+  .site-content .adventures-info-container .adventures-info-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px; }
+    .site-content .adventures-info-container .adventures-info-list .story-container-full {
+      grid-area: 1 / 1 / 3 / 3; }
+      .site-content .adventures-info-container .adventures-info-list .story-container-full img {
+        max-height: 600px;
+        max-width: none;
+        position: relative; }
+      .site-content .adventures-info-container .adventures-info-list .story-container-full .story-info {
+        position: absolute; }
+    .site-content .adventures-info-container .adventures-info-list .story-container-long {
+      grid-area: 1 / 3 / 2 / 5; }
+      .site-content .adventures-info-container .adventures-info-list .story-container-long img {
+        max-height: 600px;
+        max-width: none;
+        position: relative; }
+      .site-content .adventures-info-container .adventures-info-list .story-container-long .story-info {
+        position: absolute; }
+    .site-content .adventures-info-container .adventures-info-list .story-container-short:first-child {
+      grid-area: 2 / 3 / 3 / 4; }
+      .site-content .adventures-info-container .adventures-info-list .story-container-short:first-child img {
+        max-height: 600px;
+        max-width: none;
+        position: relative; }
+      .site-content .adventures-info-container .adventures-info-list .story-container-short:first-child .story-info {
+        position: absolute; }
+    .site-content .adventures-info-container .adventures-info-list .story-container-short:last-child {
+      grid-area: 2 / 4 / 3 / 5; }
+      .site-content .adventures-info-container .adventures-info-list .story-container-short:last-child img {
+        max-height: 600px;
+        max-width: none;
+        position: relative; }
+      .site-content .adventures-info-container .adventures-info-list .story-container-short:last-child .story-info {
+        position: absolute; }
   .site-content .page-about .entry-content h2 {
     text-align: center; }
   .site-content .hero-image-header {
@@ -1102,10 +1173,12 @@ object {
   .site-content .type-product .entry-title a {
     color: #248A83; }
     .site-content .type-product .entry-title a:visited {
-      color: #248A83; }
+      color: #28b6ad; }
     .site-content .type-product .entry-title a:hover, .site-content .type-product .entry-title a:focus, .site-content .type-product .entry-title a:active {
       color: #d99054; }
     .site-content .type-product .entry-title a:focus {
       outline: thin dotted; }
     .site-content .type-product .entry-title a:hover, .site-content .type-product .entry-title a:active {
       outline: 0; }
+  .site-content .single-product .content-area article header .product-price {
+    color: #d99054; }

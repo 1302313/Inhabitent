@@ -112,41 +112,48 @@ get_header(); ?>
 
         <!-- Section: Latest Adventures -->
 
-        <section class="journal-info-container">
+        <section class="adventures-info-container">
 
             <h2>Latest Adventures</h2>
-            <div>
-                <div>
-                    <div class="story-wrapper">
-                        <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/canoe-girl.jpg" class="wp-post-image" alt="A girl paddling a canoe">
-                        <div class="story-info">
-                            <h3 class="entry-title"><a href="#" rel="bookmark">Getting Back to Nature in a Canoe</a></h3> <a class="white-btn" href="#">Read More</a>
-                        </div>
-                    </div>
+            <div class="adventures-info-list">
+
+                <div class="story-container-full">
+                    <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/canoe-girl.jpg" class="wp-post-image" alt="A girl paddling a canoe">
                 </div>
-                <div>
-                    <div class="story-container">
-                        <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/canoe-girl.jpg" class="wp-post-image" alt="A bonfire with friends on the beach">
-                        <div class="story-info">
-                            <h3 class="entry-title"><a href="#" rel="bookmark">A Night with Friends at the Beach</a></h3> <a class="white-btn" href="#">Read More</a>
-                        </div>
-                    </div>
+                <div class="story-info">
+                    <h3><a href="#" rel="bookmark">Getting Back to Nature in a Canoe</a></h3>
+                    <a class="white-btn" href="#">Read More</a>
                 </div>
-                <div>
-                    <div class="story-container">
-                        <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/mountain-hikers.jpg" class="wp-post-image" alt="Hikers taking in the view on a mountain">
-                        <div class="story-info">
-                            <h3 class="entry-title"><a href="#" rel="bookmark">Taking in the View at Big Mountain</a></h3> <a class="white-btn" href="#">Read More</a>
-                        </div>
-                    </div>
+
+
+                <div class="story-container-long">
+                    <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/beach-bonfire.jpg" class="wp-post-image" alt="A bonfire with friends on the beach">
+
                 </div>
-                <div>
-                    <div class="story-container">
-                        <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/night-sky.jpg" class="wp-post-image" alt="Person star-gazing at the night sky">
-                        <div class="story-info">
-                            <h3 class="entry-title"><a href="#" rel="bookmark">Star-Gazing at the Night Sky</a></h3> <a class="white-btn" href="#">Read More</a>
-                        </div>
-                    </div>
+                <div class="story-info">
+                    <h3><a href="#" rel="bookmark">A Night with Friends at the Beach</a></h3>
+                    <a class="white-btn" href="#">Read More</a>
+                </div>
+
+
+                <div class="story-container-short">
+                    <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/mountain-hikers.jpg" class="wp-post-image" alt="Hikers taking in the view on a mountain">
+
+                </div>
+                <div class="story-info">
+                    <h3><a href="#" rel="bookmark">Taking in the View at Big Mountain</a></h3>
+                    <a class="white-btn" href="#">Read More</a>
+                </div>
+
+
+                <div class="story-container-short">
+                    <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/night-sky.jpg" class="wp-post-image" alt="Person star-gazing at the night sky">
+
+                </div>
+                <div class="story-info">
+                    <h3><a href="#" rel="bookmark">Star-Gazing at the Night Sky</a></h3>
+                    <a class="white-btn" href="#">Read More</a>
+
                 </div>
             </div>
             <p class="more-adventures">

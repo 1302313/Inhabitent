@@ -93,7 +93,11 @@
                 border: none;
                 color: #fff;
                 text-shadow: 1px 1px 2px #d99054, 0 0 1em #248A83, 0 0 0.2em #248A83;
+                display: none;
+            }
 
+            .search-field-focus {
+                display: initial;
             }
 
             .search-submit {
@@ -104,9 +108,7 @@
                 border: none;
                 padding: none;
                 box-shadow: none;
-
                 background: transparent;
-
                 border-radius: 3rem;
 
                 .icon-search {
