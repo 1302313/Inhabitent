@@ -8,9 +8,14 @@
 
 get_header(); ?>
 
+
+
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
+        <header class="front-page-banner">
+            <img src="<?php echo get_template_directory_uri() ?>/images/logos/inhabitent-logo-full.svg">
+        </header>
         <!-- Section: Shop Stuff -->
         <section class="product-info container">
             <h2>Shop Stuff</h2>
@@ -27,16 +32,15 @@ get_header(); ?>
             echo '<div class="front-page-shop-category-container">';
             foreach ($terms as $term) {
                 echo '<div class="front-page-shop-category">';
+
                 $icon = get_template_directory_uri() . '/images/product-type-icons/' . $term->slug . '.svg';
-                echo '<img src="' . $icon . '" />';
-
                 $name = $term->name;
-                echo '<p>' . $name . '</p>';
-
                 $description = $term->description;
-                echo '<p>' . $description . '</p>';
 
+                echo '<img src="' . $icon . '" />';
+                echo '<p>' . $description . '</p>';
                 echo '<a href="' . get_term_link($term) . '">' . $name . ' Stuff</a>';
+
                 echo "</div>";
             }
             echo '</div>'
@@ -47,16 +51,18 @@ get_header(); ?>
         <section class="journal-info-container">
             <h2>Inhabitent Journal</h2>
             <?php
+            // Get the Args
             $args = array(
                 'post_type'         => 'post',
                 'order'             => 'DESC',
                 'orderby'          => 'date',
                 'numberposts'       => '3',
             );
-
+            // Set the Args
             $querys = get_posts($args);
             ?>
 
+            <!-- Loop -->
             <?php if (have_posts()) : ?>
 
                 <?php if (is_home() && !is_front_page()) : ?>
@@ -65,37 +71,93 @@ get_header(); ?>
                     </header>
                 <?php endif; ?>
 
-                <?php /* Start the Loop */ ?>
-                <?php while (have_posts()) : the_post(); ?>
+                <div class='front-page-journal-container'>
+                    <?php foreach ($querys as $post) : ?>
+                        <?php setup_postdata($post); ?>
 
-                    <?php foreach ($querys as $post) :
-                        setup_postdata($post);
-                        get_template_part('template-parts/content', 'single');
-                    endforeach; ?>
-
-                    <?php wp_reset_postdata() ?>
+                        <div class='front-page-post-container'>
+                            <div class='front-page-post-thumbnail'>
+                                <?php the_post_thumbnail('large'); ?>
+                            </div>
 
 
-                    <?php get_template_part('template-parts/content'); ?>
+                            <div class='front-page-post-wrapper'>
+                                <div class='front-page-post-date'>
+                                    <?php the_date(); ?>
+                                </div>
+                                <div class='front-page-post-comment'>
+                                    / <?php comments_number('0 Comments', '1 Comment', '% Comments'); ?>
+                                </div>
 
-                <?php endwhile; ?>
+                            </div>
+                            <div class='front-page-post-title'>
+                                <h3>
+                                    <a href="<?php echo get_the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+                                </h3>
+                            </div>
 
-                <?php the_posts_navigation(); ?>
+                            <div class='front-page-post-permalink'>
+                                <a href="<?php echo get_the_permalink(); ?>" rel="bookmark">Read Entry</a>
+                            </div>
 
-            <?php else : ?>
-                <?php foreach ($querys as $post) :
-                    setup_postdata($post);
-                    get_template_part('template-parts/content', 'none');
 
-                endforeach; ?>
+
+                        </div>
+                    <?php endforeach; ?>
+                </div>
                 <?php wp_reset_postdata() ?>
             <?php endif; ?>
 
-            <!-- Section: Latest Adventures -->
+        </section>
+
+        <!-- Section: Latest Adventures -->
+
+        <section class="journal-info-container">
+
+            <h2>Latest Adventures</h2>
+            <div>
+                <div>
+                    <div class="story-wrapper">
+                        <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/canoe-girl.jpg" class="wp-post-image" alt="A girl paddling a canoe">
+                        <div class="story-info">
+                            <h3 class="entry-title"><a href="#" rel="bookmark">Getting Back to Nature in a Canoe</a></h3> <a class="white-btn" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="story-container">
+                        <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/canoe-girl.jpg" class="wp-post-image" alt="A bonfire with friends on the beach">
+                        <div class="story-info">
+                            <h3 class="entry-title"><a href="#" rel="bookmark">A Night with Friends at the Beach</a></h3> <a class="white-btn" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="story-container">
+                        <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/mountain-hikers.jpg" class="wp-post-image" alt="Hikers taking in the view on a mountain">
+                        <div class="story-info">
+                            <h3 class="entry-title"><a href="#" rel="bookmark">Taking in the View at Big Mountain</a></h3> <a class="white-btn" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="story-container">
+                        <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/night-sky.jpg" class="wp-post-image" alt="Person star-gazing at the night sky">
+                        <div class="story-info">
+                            <h3 class="entry-title"><a href="#" rel="bookmark">Star-Gazing at the Night Sky</a></h3> <a class="white-btn" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="more-adventures">
+                <a href="" class="btn">More Adventures</a>
+            </p>
+
+        </section>
+
 
 
     </main><!-- #main -->
 </div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

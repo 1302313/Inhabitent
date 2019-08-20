@@ -6,6 +6,7 @@
     display: flex;
     flex-flow: row wrap;
     width: auto;
+    min-width: 1000px;
 
     .content-area {
         width: 100%;
@@ -17,6 +18,12 @@
 
     /* All Pages - Common Design */
     body {
+
+        display: flex;
+        flex-flow: column;
+    }
+
+    .hfeed {
         height: 100vh;
     }
 
@@ -43,16 +50,184 @@
         }
     }
 
-    .hfeed {
-        // height: 100vh;
-        display: flex;
-        flex-flow: column wrap;
 
+
+    /* Front Page */
+
+    .home {
+        .latest-entries {
+            h3 {}
+        }
+    }
+
+    /* Shop Category Carousel */
+    .product-info {
+        padding-bottom: 3rem;
+
+        h2 {
+            text-align: center;
+            margin: 1rem auto;
+        }
+
+        .front-page-shop-category-container {
+            margin: 0 auto;
+            width: 960px;
+            text-align: center;
+
+            display: flex;
+            justify-content: space-between;
+
+
+
+
+            .front-page-shop-category {
+                padding: 1rem;
+                border: 1px solid #e1e1e1;
+                width: 20%;
+                min-width: 13rem;
+                box-shadow: 3px 3px 5px #fff9c0, 0 0 0.75em #248A83;
+
+
+                img {
+                    height: 3.5rem;
+                    width: 3.5rem;
+                }
+
+
+
+                a {
+                    text-decoration: none;
+                    color: #fff;
+
+                    border: 1px solid #248A83;
+                    border-radius: 0 1rem;
+                    padding: 0.75rem;
+                    background: #248A83;
+
+
+                }
+            }
+
+        }
 
 
     }
 
-    /* Front Page */
+    .journal-info-container {
+
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+
+        padding-bottom: 3rem;
+
+        h2 {
+            text-align: center;
+            margin: 1.5rem auto;
+        }
+
+        .front-page-journal-container {
+
+            display: flex;
+            flex-flow: row wrap;
+            width: 960px;
+
+
+
+
+
+
+            .front-page-post-container {
+                margin: 0 auto;
+                flex: 0 1 30%;
+                text-align: center;
+
+                display: flex;
+                flex-flow: column wrap;
+
+                min-width: 13rem;
+                border: 1px solid #e1e1e1;
+
+
+                .front-page-post-thumbnail {
+
+                    display: flex;
+
+                    width: 100%;
+                    height: 50%;
+
+                    img {}
+
+                }
+
+                .front-page-post-wrapper {
+
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: flex-start;
+                    padding-left: 1rem;
+                    margin-top: 1rem;
+
+                    .front-page-post-date {
+                        padding-right: 0.5rem;
+                    }
+
+
+                    .front-page-post-comment {
+
+                        padding-left: 0.5rem;
+                    }
+
+
+                }
+
+                .front-page-post-title {
+
+                    padding-left: 1rem;
+                    line-height: 1.25;
+                    font-size: 0.9rem;
+                    text-align: left;
+
+                    a {
+                        text-decoration: none;
+
+                    }
+                }
+
+                .front-page-post-permalink {
+
+
+
+                    a {
+                        text-decoration: none;
+                        color: $color__border-abbr;
+
+                        border: 1px solid $color__border-abbr;
+                        border-radius: 0 1rem;
+                        padding: 0.5rem;
+                        background: #fff;
+                        display: inline-block;
+                    }
+
+
+
+                    &:hover {
+
+                        a {
+                            color: #fff;
+                            background: $color__link;
+                        }
+                    }
+                }
+
+
+
+
+
+
+            }
+        }
+    }
 
     /* About Page */
 
