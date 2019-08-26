@@ -13,18 +13,18 @@ get_header(); ?>
 
         <?php while (have_posts()) : the_post(); ?>
 
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <article id="post-<?php the_ID(); ?>" class="page-about-section" <?php post_class(); ?>>
 
-                <div class="entry-content">
-                    <?php the_content(); ?>
-                    <?php
+            <div class="entry-content">
+                <?php the_content(); ?>
+                <?php
                     wp_link_pages(array(
                         'before' => '<div class="page-links">' . esc_html('Pages:'),
                         'after'  => '</div>',
                     ));
                     ?>
-                </div><!-- .entry-content -->
-            </article><!-- #post-## -->
+            </div><!-- .entry-content -->
+        </article><!-- #post-## -->
 
 
 

@@ -13,49 +13,77 @@ get_header(); ?>
 
 		<?php if (have_posts()) : ?>
 
-			<header class="page-header">
+		<header class="page-header">
+			<h1>Shop Stuff</h1>
+
+			<ul class="archive-product-taxonomies">
 				<?php
-				the_archive_title('<h1 class="page-title">', '</h1>');
-				the_archive_description('<div class="taxonomy-description">', '</div>');
-				?>
-			</header><!-- .page-header -->
+					$list_taxonomy = array(
+						'taxonomy' => 'product-type',
+						'hide_empty' => true,
+						'order' => 'ASC',
+					);
+					$terms = get_terms($list_taxonomy);
+					?>
+				<!-- Start loop for product type -->
+				<?php foreach ($terms as $term) : ?>
+				<li class="archive-product-taxonomies-list">
+					<a href="<?= get_term_link($term); ?>">
+						<?= strtoupper($term->name); ?>
+					</a>
+				</li>
+				<?php endforeach; ?>
+				<?php wp_reset_postdata(); ?>
+			</ul>
 
-			<?php /* Start the Loop */ ?>
-			<?php while (have_posts()) : the_post(); ?>
+		</header><!-- .page-header -->
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<header class="entry-header">
-						<?php if (has_post_thumbnail()) : ?>
-							<?php the_post_thumbnail('large'); ?>
-						<?php endif; ?>
+		<?php /* Start the Loop */ ?>
+		<?php while (have_posts()) : the_post(); ?>
+		<!-- Main Content -->
+		<article id="post-<?php the_ID(); ?>" class="archive-product-item" <?php post_class(); ?>>
 
-
-						<div class="product-price">
-							$<?php echo CFS()->get('product_price'); ?>
-						</div>
-
+			<?php if (has_post_thumbnail()) : ?>
+			<!-- Product Image -->
+			<div class="archive-product-container">
+				<div class="archive-product-image">
+					<a href="<?php get_permalink(); ?>">
+						<?php the_post_thumbnail('large'); ?>
+					</a>
+				</div>
+				<?php endif; ?>
+				<!-- Product Title and Price -->
+				<div class="archive-product-meta">
+					<!-- Product Title -->
+					<span class="archive-product-title">
 						<?php the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
+					</span>
+					<!-- Product Price -->
+					<span class="archive-product-price">
+						$<?php echo CFS()->get('product_price'); ?>
+					</span>
+				</div>
+			</div>
 
-						<?php if ('post' === get_post_type()) : ?>
-							<div class="entry-meta">
-								<?php red_starter_posted_on(); ?> / <?php comments_number('0 Comments', '1 Comment', '% Comments'); ?> / <?php red_starter_posted_by(); ?>
-							</div><!-- .entry-meta -->
-						<?php endif; ?>
-					</header><!-- .entry-header -->
-				</article><!-- #post-## -->
+			<?php if ('post' === get_post_type()) : ?>
+			<div class="entry-meta">
+				<?php red_starter_posted_on(); ?> / <?php comments_number('0 Comments', '1 Comment', '% Comments'); ?> / <?php red_starter_posted_by(); ?>
+			</div><!-- .entry-meta -->
+			<?php endif; ?>
 
-			<?php endwhile; ?>
+		</article><!-- #post-## -->
 
-			<?php the_posts_navigation(); ?>
+		<?php endwhile; ?>
+
+		<?php the_posts_navigation(); ?>
 
 		<?php else : ?>
 
-			<?php get_template_part('template-parts/content', 'none'); ?>
+		<?php get_template_part('template-parts/content', 'none'); ?>
 
 		<?php endif; ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

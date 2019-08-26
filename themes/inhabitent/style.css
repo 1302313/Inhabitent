@@ -359,7 +359,7 @@ th {
             padding: 0; }
 
 .site-footer {
-  width: 100%;
+  width: 100vw;
   -ms-flex-item-align: end;
       align-self: flex-end;
   color: #fff;
@@ -394,7 +394,7 @@ th {
   .site-footer h3 {
     color: #d99054; }
   .site-footer .site-footer-container {
-    width: 80%;
+    width: 1080px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -402,34 +402,29 @@ th {
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 1rem 1.5rem; }
     .site-footer .site-footer-container .site-footer-contact-info {
-      width: 20%;
-      padding-left: 2rem;
-      -webkit-box-flex: 15%;
-          -ms-flex: 15%;
-              flex: 15%;
-      justify-self: flex-start; }
+      margin-right: 4.5rem; }
+      .site-footer .site-footer-container .site-footer-contact-info .contact:last-child i {
+        margin-right: 0.5rem; }
     .site-footer .site-footer-container .site-footer-business-hours {
-      width: 25%;
-      -webkit-box-flex: 30%;
-          -ms-flex: 30%;
-              flex: 30%;
-      justify-self: flex-start; }
+      -webkit-box-flex: 20%;
+          -ms-flex: 20%;
+              flex: 20%; }
+      .site-footer .site-footer-container .site-footer-business-hours span {
+        font-weight: bold; }
     .site-footer .site-footer-container .site-footer-logo-container {
       width: 50%;
       -webkit-box-flex: 1;
-          -ms-flex: 1 0 50%;
-              flex: 1 0 50%;
+          -ms-flex: 1 0 35%;
+              flex: 1 0 35%;
       justify-self: flex-end;
       align-self: flex-start;
-      padding-top: 2rem;
-      padding-right: 3rem;
+      padding-top: 1.25rem;
       display: grid;
       grid-template-columns: repeat(2, 1fr); }
       .site-footer .site-footer-container .site-footer-logo-container .site-footer-logo {
@@ -439,7 +434,7 @@ th {
         /* Short hand */ }
     .site-footer .site-footer-container .site-footer-info {
       width: 1240px;
-      margin: 0 auto;
+      margin: 3rem auto 0 auto;
       padding: 0.5rem;
       -webkit-box-flex: 1;
           -ms-flex: 1 0 100%;
@@ -494,9 +489,6 @@ h2 {
   margin-bottom: 1.5rem; }
 
 /* Copy */
-p {
-  margin-bottom: 1.5rem; }
-
 dfn,
 cite,
 em,
@@ -681,7 +673,7 @@ a {
   a:visited {
     color: #28b6ad; }
   a:hover, a:focus, a:active {
-    color: #d99054; }
+    color: #2f1339; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -727,7 +719,7 @@ a {
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
-  display: block; }
+  display: none; }
 
 @media screen and (min-width: 768px) {
   .menu-toggle {
@@ -820,9 +812,11 @@ a {
   /* Make sure select elements fit in widgets. */ }
   .widget select {
     max-width: 100%; }
-  .widget .contact-meta i {
+  .widget ul
+.contact-meta i {
     margin-right: 0.75rem; }
-  .widget .contact-meta a {
+  .widget ul
+.contact-meta a {
     text-decoration: none; }
 
 /* Search widget. */
@@ -850,6 +844,10 @@ a {
 .entry-content,
 .entry-summary {
   margin: 1.5rem 0 0; }
+
+.entry-title {
+  font-size: 32px;
+  font-size: 2rem; }
 
 .entry-content {
   margin: 0; }
@@ -933,6 +931,7 @@ object {
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
+/* All Pages - Common Design */
 .site-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -942,8 +941,7 @@ object {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   width: auto;
-  min-width: 1000px;
-  /* All Pages - Common Design */
+  padding-top: 50px;
   /* Front Page */
   /* Shop Category */
   /* Journal Category */
@@ -955,11 +953,15 @@ object {
   /* Journal */
   /* Single Journal Post
 
-/* Contact Page */
+    /* Contact Page */
   /* Search result Page */
   /* Adventures Page - Archive */
   /* Single Adventure Post */
   /* 404 Page */ }
+  .home .site-content,
+  .page-about .site-content,
+  .single-adventure .site-content {
+    padding-top: 0; }
   .site-content .content-area {
     width: 100%; }
   .site-content body {
@@ -977,7 +979,7 @@ object {
     .site-content a:visited {
       color: #28b6ad; }
     .site-content a:hover, .site-content a:focus, .site-content a:active {
-      color: #d99054; }
+      color: #2f1339; }
     .site-content a:focus {
       outline: thin dotted; }
     .site-content a:hover, .site-content a:active {
@@ -1156,8 +1158,22 @@ object {
         position: relative; }
       .site-content .adventures-info-container .adventures-info-list .story-container-short:last-child .story-info {
         position: absolute; }
-  .site-content .page-about .entry-content h2 {
-    text-align: center; }
+  .site-content .page-about-section .entry-content > :not(header) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px; }
+  .site-content .page-about-section .entry-content {
+    margin-top: 0;
+    margin-bottom: 2rem; }
+    .site-content .page-about-section .entry-content header {
+      margin-bottom: 3rem; }
+    .site-content .page-about-section .entry-content h2 {
+      text-align: center;
+      margin: 0 auto; }
+    .site-content .page-about-section .entry-content p:last-of-type {
+      margin-bottom: 0;
+      margin: 0 auto;
+      padding: 1.5rem; }
   .site-content .hero-image-header {
     height: 100vh;
     font-family: Novecento Sans Web, sans-serif;
@@ -1170,15 +1186,99 @@ object {
       text-shadow: 1px 1px 2px #d99054, 0 0 1em #248A83, 0 0 0.2em #248A83; }
   .site-content .page-about-content {
     padding: 3rem; }
-  .site-content .type-product .entry-title a {
+  .site-content .archive-product-taxonomies {
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .site-content .archive-product-taxonomies .archive-product-taxonomies-list {
+      font-family: "Novecento Sans Web", sans-serif;
+      list-style-type: none;
+      margin: 0 0.5rem; }
+      .site-content .archive-product-taxonomies .archive-product-taxonomies-list a {
+        text-decoration: none; }
+  .site-content .archive-product-item a {
     color: #248A83; }
-    .site-content .type-product .entry-title a:visited {
+    .site-content .archive-product-item a:visited {
       color: #28b6ad; }
-    .site-content .type-product .entry-title a:hover, .site-content .type-product .entry-title a:focus, .site-content .type-product .entry-title a:active {
-      color: #d99054; }
-    .site-content .type-product .entry-title a:focus {
+    .site-content .archive-product-item a:hover, .site-content .archive-product-item a:focus, .site-content .archive-product-item a:active {
+      color: #2f1339; }
+    .site-content .archive-product-item a:focus {
       outline: thin dotted; }
-    .site-content .type-product .entry-title a:hover, .site-content .type-product .entry-title a:active {
+    .site-content .archive-product-item a:hover, .site-content .archive-product-item a:active {
       outline: 0; }
-  .site-content .single-product .content-area article header .product-price {
-    color: #d99054; }
+  .site-content .archive-product-item .archive-product-container .archive-product-image {
+    background-color: #e1e1e1;
+    height: 250px;
+    overflow: hidden;
+    position: relative; }
+    .site-content .archive-product-item .archive-product-container .archive-product-image img {
+      left: 50%;
+      max-height: 250px;
+      max-width: none;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translate(-50%, -52%);
+              transform: translate(-50%, -52%);
+      width: auto; }
+  .site-content .archive-product-item .archive-product-container .archive-product-meta {
+    padding: 0.75rem 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .site-content .archive-product-item .archive-product-container .archive-product-meta .archive-product-title .entry-title {
+      font-size: 1rem;
+      font-weight: 400;
+      font-family: Merriweather Web, serif;
+      margin: 0;
+      padding: 0;
+      text-transform: capitalize; }
+      .site-content .archive-product-item .archive-product-container .archive-product-meta .archive-product-title .entry-title a {
+        color: #404040;
+        text-decoration: none; }
+      .site-content .archive-product-item .archive-product-container .archive-product-meta .archive-product-title .entry-title::before {
+        width: 0;
+        white-space: nowrap; }
+    .site-content .archive-product-item .archive-product-container .archive-product-meta .archive-product-price {
+      font-size: 1rem; }
+  .site-content .single-product .hentry {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .site-content .single-product .hentry .single-product-image {
+      width: 50%; }
+    .site-content .single-product .hentry .single-product-title {
+      color: #d99054; }
+    .site-content .single-product .hentry .single-product-price {
+      margin-top: 0;
+      text-transform: uppercase; }
+    .site-content .single-product .hentry .single-product-content {
+      margin-top: 0; }

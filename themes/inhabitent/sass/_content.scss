@@ -21,10 +21,17 @@
     display: inline;
 }
 
+
+
 .page-content,
 .entry-content,
 .entry-summary {
     margin: $base__space-unit 0 0;
+}
+
+.entry-title {
+    @include font-size(2);
+
 }
 
 .entry-content {
@@ -35,6 +42,8 @@
     clear: both;
     margin: 0 0 $base__space-unit;
 }
+
+
 
 
 

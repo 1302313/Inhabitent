@@ -1,6 +1,6 @@
 .site-footer {
 
-    width: 100%;
+    width: 100vw;
     align-self: flex-end;
 
     color: $color__text-footer;
@@ -43,34 +43,46 @@
     }
 
     .site-footer-container {
-        width: 80%;
+        width: $desktop__width;
         display: flex;
         flex-flow: row wrap;
-        justify-content: center;
         align-items: center;
+        margin: 0 auto;
+
+        padding: $base__space-unit $base__space-unit 1rem $base__space-unit;
 
 
         .site-footer-contact-info {
-            width: 20%;
-            padding-left: 2rem;
-            flex: 15%;
-            justify-self: flex-start;
+            // width: 20%;
+            margin-right: $base__space-unit * 3;
+
+            .contact {
+                &:last-child {
+                    i {
+                        margin-right: $base__space-unit - 1;
+                    }
+                }
+            }
+
+            // justify-self: flex-start;
         }
 
         .site-footer-business-hours {
-            width: 25%;
-            flex: 30%;
-            justify-self: flex-start;
-        }
+            flex: 20%;
 
+
+            span {
+                font-weight: bold;
+            }
+        }
 
         .site-footer-logo-container {
             width: 50%;
-            flex: 1 0 50%;
+            flex: 1 0 35%;
             justify-self: flex-end;
             align-self: flex-start;
-            padding-top: 2rem;
-            padding-right: 3rem;
+            padding-top: $base__space-unit - 0.25rem;
+
 
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -87,15 +99,13 @@
 
         .site-footer-info {
             width: 1240px;
-            margin: 0 auto;
+            margin: $base__space-unit * 2 auto 0 auto;
             padding: 0.5rem;
             flex: 1 0 100%;
 
             display: flex;
             justify-content: center;
             align-items: center;
-
-
 
 
         }
