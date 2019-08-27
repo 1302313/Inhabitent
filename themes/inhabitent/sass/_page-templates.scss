@@ -225,10 +225,12 @@
         .adventures-info-list {
 
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
+            grid-template-columns: (4, 1fr);
+            grid-template-rows: (2, 1fr);
             grid-column-gap: 15px;
             grid-row-gap: 15px;
+            grid-template-areas: "a a b b"
+                "a a c d";
 
             .story-container-full {
 
