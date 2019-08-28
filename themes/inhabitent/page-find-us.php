@@ -13,32 +13,37 @@ get_header(); ?>
 
         <?php while (have_posts()) : the_post(); ?>
 
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <div class="content-and-widget-flexbox">
+            <article id="post-<?php the_ID(); ?>" class="find-us-page" <?php post_class(); ?>>
 
+                <!-- Find Us Page Title-->
                 <header class="entry-header">
                     <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
-                </header><!-- .entry-header -->
+                </header>
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10414.754406019309!2d-123.1381278!3d49.2633479!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7edde857c28340ba!2sRED+Academy!5e0!3m2!1sen!2sca!4v1566257196371!5m2!1sen!2sca" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <!-- Find Us Page Map -->
+                <div class="map-icon"><a href="https://goo.gl/maps/jw9cBBuCB27cbApZ9"><i class="fas fa-map-marked-alt"></i></a></div>
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10414.754406019309!2d-123.1381278!3d49.2633479!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7edde857c28340ba!2sRED+Academy!5e0!3m2!1sen!2sca!4v1566257196371!5m2!1sen!2sca" width="760" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
 
+                <!-- .entry-content -->
                 <div class="entry-content">
                     <?php the_content(); ?>
-                    <?php
-                    wp_link_pages(array(
-                        'before' => '<div class="page-links">' . esc_html('Pages:'),
-                        'after'  => '</div>',
-                    ));
-                    ?>
-                </div><!-- .entry-content -->
+                </div>
+
             </article><!-- #post-## -->
 
 
+            <!-- Site Widget Area -->
+            <?php get_sidebar(); ?>
 
-        <?php endwhile; // End of the loop. 
-        ?>
+        </div>
+        <?php endwhile; ?>
 
     </main><!-- #main -->
 </div><!-- #primary -->
-<?php get_sidebar(); ?>
 
+
+
+
+<!-- Site Footer -->
 <?php get_footer(); ?>

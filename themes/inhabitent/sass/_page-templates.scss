@@ -308,8 +308,6 @@
 
     /* About Page */
 
-
-
     .page-about-section {
         .entry-content> :not(header) {
             margin-left: auto;
@@ -335,7 +333,7 @@
                 &:last-of-type {
                     margin-bottom: 0;
                     margin: 0 auto;
-                    padding: $base__space-unit;
+
                 }
             }
         }
@@ -346,7 +344,7 @@
 
     .hero-image-header {
         height: 100vh;
-        font-family: Novecento Sans Web, sans-serif;
+        font-family: $font__alt, sans-serif;
         text-transform: uppercase;
 
         h1 {
@@ -504,7 +502,66 @@
 
     /* Single Journal Post
 
-    /* Contact Page */
+    /* Find Us Page Page */
+    .content-and-widget-flexbox {
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-around;
+
+        margin-left: auto;
+        margin-right: auto;
+        width: 1120px;
+
+        .map-icon {
+            display: flex;
+            justify-content: flex-start;
+            height: 1.5rem;
+            align-content: center;
+        }
+
+
+
+        .find-us-page {
+
+            padding: 3rem 0;
+            border-right: 1px solid #e1e1e1;
+            padding-right: 5%;
+
+            .wpcf7 {
+                form {
+                    .required {
+
+                        color: $color__brand-orange;
+                    }
+
+
+                    .contact-name {}
+
+                    .contact-email {}
+
+                    .contact-subject {}
+
+                    .contact-message {}
+
+                    .submit {}
+                }
+            }
+        }
+
+        .widget-area {
+            padding-left: 5%;
+            width: 500px;
+            padding-top: $base__space-unit * 2;
+
+            .day-of-week {
+                font-weight: 700;
+            }
+        }
+    }
+
+
+
+
 
     /* Search result Page */
 
