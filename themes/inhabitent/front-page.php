@@ -65,47 +65,47 @@ get_header(); ?>
             <!-- Loop -->
             <?php if (have_posts()) : ?>
 
-                <?php if (is_home() && !is_front_page()) : ?>
-                    <header>
-                        <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-                    </header>
-                <?php endif; ?>
+            <?php if (is_home() && !is_front_page()) : ?>
+            <header>
+                <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+            </header>
+            <?php endif; ?>
 
-                <div class='front-page-journal-container'>
-                    <?php foreach ($querys as $post) : ?>
-                        <?php setup_postdata($post); ?>
+            <div class='front-page-journal-container'>
+                <?php foreach ($querys as $post) : ?>
+                <?php setup_postdata($post); ?>
 
-                        <div class='front-page-post-container'>
-                            <div class='front-page-post-thumbnail'>
-                                <?php the_post_thumbnail('large'); ?>
-                            </div>
-
-
-                            <div class='front-page-post-wrapper'>
-                                <div class='front-page-post-date'>
-                                    <?php the_date(); ?>
-                                </div>
-                                <div class='front-page-post-comment'>
-                                    / <?php comments_number('0 Comments', '1 Comment', '% Comments'); ?>
-                                </div>
-
-                            </div>
-                            <div class='front-page-post-title'>
-                                <h3>
-                                    <a href="<?php echo get_the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-                                </h3>
-                            </div>
-
-                            <div class='front-page-post-permalink'>
-                                <a href="<?php echo get_the_permalink(); ?>" rel="bookmark">Read Entry</a>
-                            </div>
+                <div class='front-page-post-container'>
+                    <div class='front-page-post-thumbnail'>
+                        <?php the_post_thumbnail('large'); ?>
+                    </div>
 
 
-
+                    <div class='front-page-post-wrapper'>
+                        <div class='front-page-post-date'>
+                            <?php the_date(); ?>
                         </div>
-                    <?php endforeach; ?>
+                        <div class='front-page-post-comment'>
+                            / <?php comments_number('0 Comments', '1 Comment', '% Comments'); ?>
+                        </div>
+
+                    </div>
+                    <div class='front-page-post-title'>
+                        <h3>
+                            <a href="<?php echo get_the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+                        </h3>
+                    </div>
+
+                    <div class='front-page-post-permalink'>
+                        <a href="<?php echo get_the_permalink(); ?>" rel="bookmark">Read Entry</a>
+                    </div>
+
+
+
                 </div>
-                <?php wp_reset_postdata() ?>
+                <?php endforeach; ?>
+            </div>
+            <?php wp_reset_postdata() ?>
             <?php endif; ?>
 
         </section>
@@ -117,44 +117,45 @@ get_header(); ?>
             <h2>Latest Adventures</h2>
             <div class="adventures-info-list">
 
-                <div class="story-container-full">
-                    <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/canoe-girl.jpg" class="wp-post-image" alt="A girl paddling a canoe">
-                </div>
-                <div class="story-info">
-                    <h3><a href="#" rel="bookmark">Getting Back to Nature in a Canoe</a></h3>
-                    <a class="white-btn" href="#">Read More</a>
-                </div>
+                <div class="story-container-canoe-girl">
 
-
-                <div class="story-container-long">
-                    <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/beach-bonfire.jpg" class="wp-post-image" alt="A bonfire with friends on the beach">
-
-                </div>
-                <div class="story-info">
-                    <h3><a href="#" rel="bookmark">A Night with Friends at the Beach</a></h3>
-                    <a class="white-btn" href="#">Read More</a>
+                    <div class="story-info">
+                        <h3><a href="#" rel="bookmark">Getting Back to Nature in a Canoe</a></h3>
+                        <a class="white-btn" href="#">Read More</a>
+                    </div>
                 </div>
 
 
-                <div class="story-container-short">
-                    <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/mountain-hikers.jpg" class="wp-post-image" alt="Hikers taking in the view on a mountain">
 
+                <div class="story-container-beach-bonfire">
+
+                    <div class="story-info">
+                        <h3><a href="#" rel="bookmark">A Night with Friends at the Beach</a></h3>
+                        <a class="white-btn" href="#">Read More</a>
+                    </div>
                 </div>
-                <div class="story-info">
-                    <h3><a href="#" rel="bookmark">Taking in the View at Big Mountain</a></h3>
-                    <a class="white-btn" href="#">Read More</a>
+
+
+
+                <div class="story-container-mountain-hikers">
+
+                    <div class="story-info">
+                        <h3><a href="#" rel="bookmark">Taking in the View at Big Mountain</a></h3>
+                        <a class="white-btn" href="#">Read More</a>
+                    </div>
                 </div>
 
 
-                <div class="story-container-short">
-                    <img src="/Inhabitent/wp-content/themes/inhabitent/images/adventure-photos/night-sky.jpg" class="wp-post-image" alt="Person star-gazing at the night sky">
 
-                </div>
-                <div class="story-info">
-                    <h3><a href="#" rel="bookmark">Star-Gazing at the Night Sky</a></h3>
-                    <a class="white-btn" href="#">Read More</a>
+                <div class="story-container-night-sky">
 
+                    <div class="story-info">
+                        <h3><a href="#" rel="bookmark">Star-Gazing at the Night Sky</a></h3>
+                        <a class="white-btn" href="#">Read More</a>
+
+                    </div>
                 </div>
+
             </div>
             <p class="more-adventures">
                 <a href="" class="btn">More Adventures</a>
