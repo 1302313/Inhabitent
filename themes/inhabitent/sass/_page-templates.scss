@@ -10,6 +10,9 @@
 
     padding-top: 50px;
 
+    margin: 0 auto;
+    width: 1120px;
+
     .home &,
     .page-about &,
     .single-adventure & {
@@ -71,6 +74,9 @@
     }
 
     /* Shop Category */
+
+
+
     .product-info {
         margin-top: 3rem;
         padding-bottom: 3rem;
@@ -360,9 +366,41 @@
     }
 
 
-    /* Shop Page - Archive */
+    /* Archive Shop Page Main */
 
-    /* Product Type Page - Archive */
+    .page-shop {
+
+        padding: 3rem 0;
+
+
+        .page-header {
+            border-bottom: 1px dashed #c8c8c8;
+            margin-bottom: 3rem;
+            text-align: center;
+            padding: 3rem;
+
+            display: flex;
+            flex-flow: column wrap;
+
+            .archive-product-taxonomies {
+                display: flex;
+                font-family: $font__alt,
+                    sans-serif;
+                font-size: 1.2rem;
+                justify-content: center;
+                list-style-type: none;
+                margin-left: 0;
+                padding-left: 0;
+                text-transform: uppercase;
+
+                .archive-product-taxonomies-list {
+                    padding: 0 1rem;
+                }
+            }
+
+        }
+    }
+
     .archive-product-taxonomies {
         margin: 0;
         padding: 0;
@@ -384,7 +422,16 @@
         }
     }
 
+    /* Product - Archive */
+
+
+    // grid-gap: $base__space-unit;
+    // margin-bottom: $base__space-unit;
+
     .archive-product-item {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
 
         a {
             color: $color__link;
@@ -469,36 +516,110 @@
         }
     }
 
+    /* Taxonomy Product Page */
+
+    .taxonomy-archive {
+
+        padding: 3rem 0;
+
+        .page-header {
+            border-bottom: 1px dashed #c8c8c8;
+            margin-bottom: 3rem;
+            text-align: center;
+            padding: 3rem;
+
+            display: flex;
+            flex-flow: column wrap;
+
+            .archive-product-taxonomies {
+                display: flex;
+                font-family: $font__alt,
+                    sans-serif;
+                font-size: 1.2rem;
+                justify-content: center;
+                list-style-type: none;
+                margin-left: 0;
+                padding-left: 0;
+                text-transform: uppercase;
+
+                .archive-product-taxonomies-list {
+                    padding: 0 1rem;
+                }
+            }
+        }
+    }
+
+
     /* Single Product Page */
 
-    .single-product .hentry {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
+    .single-product-page {
 
-        .single-product-image {
-            width: 50%;
+        padding: 3rem 0;
+        margin-bottom: $base__space-unit * 4;
+
+        .single-product-container {
+
+
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+
+            .single-product-image {
+                width: 50%;
+            }
+
+            .single-product-info {
+
+                width: 45%;
+
+                .single-product-title {
+                    color: $color__text-footer-h3;
+                    margin-top: 0.5rem;
+                    margin-bottom: 0.75rem;
+                }
+
+                .single-product-price {
+                    margin-top: 0;
+                    text-transform: uppercase;
+                    font-family: $font__alt, sans-serif;
+                    font-size: 1.3rem;
+                    line-height: 1;
+                }
+
+                .single-product-content {
+                    margin-top: 1.5rem;
+                    margin-bottom: 1.5rem;
+                }
+
+                .white-btn {
+
+                    background-color: transparent;
+                    color: black;
+                    border: 1px solid black;
+                    padding: .75rem 1.5rem;
+                    width: 120px;
+                    text-align: center;
+
+
+                    line-height: 1;
+                    text-decoration: none;
+                    text-transform: uppercase;
+
+
+                    .white-btn:hover {
+                        color: $color__brand-green;
+                    }
+                }
+            }
+
+
         }
-
-        .single-product-title {
-            color: $color__text-footer-h3;
-        }
-
-        .single-product-price {
-            margin-top: 0;
-            text-transform: uppercase;
-        }
-
-        .single-product-content {
-            margin-top: 0;
-        }
-
 
     }
 
     /* Journal */
 
-    /* Single Journal Post
+    /* Single Journal Post */
 
     /* Find Us Page Page */
     .content-and-widget-flexbox {
