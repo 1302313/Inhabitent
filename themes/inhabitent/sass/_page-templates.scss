@@ -11,7 +11,7 @@
     padding-top: 50px;
 
     margin: 0 auto;
-    width: 1120px;
+
 
     .home &,
     .page-about &,
@@ -128,7 +128,8 @@
         }
     }
 
-    /* Journal Category */
+
+    /* Front Page - Journal Category */
     .journal-info-container {
 
         display: flex;
@@ -365,7 +366,6 @@
         padding: 3rem;
     }
 
-
     /* Archive Shop Page Main */
 
     .page-shop {
@@ -427,10 +427,13 @@
 
     // grid-gap: $base__space-unit;
     // margin-bottom: $base__space-unit;
-
-    .archive-product-item {
+    .page-product-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px 20px;
+    }
+
+    .archive-product-item {
 
 
         a {
@@ -457,6 +460,7 @@
         }
 
         .archive-product-container {
+
 
             .archive-product-image {
                 background-color: #e1e1e1;
@@ -556,6 +560,8 @@
 
         padding: 3rem 0;
         margin-bottom: $base__space-unit * 4;
+        margin: 0 auto;
+        width: 1120px;
 
         .single-product-container {
 
@@ -688,6 +694,8 @@
 
     .adventures-info-container {
         margin-bottom: 4.5rem;
+        width: 1120px;
+        margin: 0 auto;
     }
 
     .btn {
@@ -831,4 +839,96 @@
 
 
     /* 404 Page */
+}
+
+/* Journal Page Archive */
+
+.page-journal-content {
+
+    margin: 0 auto;
+    width: 1120px;
+
+    .widget-area {
+        flex: 20%;
+        padding-left: 10%;
+        padding-top: $base__space-unit * 3;
+    }
+}
+
+.page-journal {
+    flex: 50%;
+    border-right: 1px solid #e1e1e1;
+    padding-top: $base__space-unit * 3;
+
+
+
+    .entry-content {
+        width: 75%;
+    }
+
+    .journal-image-container {
+        position: relative;
+
+        img {
+            width: 85%;
+        }
+
+        h2 {
+            background-color: $color__brand-green;
+            color: #fff;
+            font-size: 2.1rem;
+            left: 0;
+            padding: .75rem 1.5rem;
+            position: absolute;
+            margin-top: 2.25rem;
+            max-width: 65%;
+            top: 0;
+
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+
+        .entry-meta {
+            background-color: $color__brand-green;
+            bottom: 10px;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+            font-family: Novecento Sans Web, sans-serif;
+            padding: 0.5rem 1.5rem;
+            position: absolute;
+            right: 131.5px;
+            text-transform: uppercase;
+        }
+
+
+    }
+
+
+
+    .white-btn {
+
+        background-color: transparent;
+        color: black;
+        border: 1px solid black;
+        padding: .75rem 1.5rem;
+        width: 120px;
+        text-align: center;
+        cursor: pointer;
+        line-height: 1;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+
+
+        .white-btn:hover {
+            background: $color__brand-green;
+            color: #fff;
+        }
+    }
+
+
 }
