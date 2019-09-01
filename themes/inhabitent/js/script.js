@@ -1,23 +1,28 @@
 (function($) {
   $(function() {
-    const $searchForm = $('.search-form');
-    let $text = $('.search-field');
+    const $searchTextInput = $('#masthead input[type="search"]');
+    const $searchButton = $('.search-submit');
+    const $label = $searchButton.siblings('label');
 
-    // on click
-    $('.search-submit').click(function() {
-      if ($text.val().length === 0) {
-        event.preventDefault();
-      }
-      $searchForm.toggleClass('.search-field-focus');
-      $text.focus();
+    $searchButton.click(function(event) {
+      event.preventDefault();
+      $('#masthead .search-field').toggle('slide');
+      $searchTextInput.focus();
     });
 
-    // on blur
-    $text.blur(function() {
-      if ($text.val().length > 0) {
-        return false;
+    $searchTextInput.blur(function() {
+      if ($(this).val() == '') {
+        $('#masthead .search-field').toggle('slide');
       }
-      $searchForm.removeClass('.search-field-focus');
     });
+    // When leaving focus or clicking away, hide the label
+    // $searchField.on('blur', function() {
+    //   '' === $searchField.val() &&
+    //     $('#masthead label').animate({
+    //       width: '0'
+    //     });
+    // });
   });
 })(jQuery);
+
+// header reverse header
