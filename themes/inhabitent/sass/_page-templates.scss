@@ -884,11 +884,10 @@
         }
     }
 
-    /* Single Adventure Post */
 
 
 
-    /* 404 Page */
+
 }
 
 /* Journal Page Archive */
@@ -1122,6 +1121,155 @@
         }
     }
 }
+
+/* 404 Page */
+
+.for-404 {
+    width: 1120px;
+
+    select {
+        margin-top: $base__space-unit;
+        padding: $base__space-unit/2;
+        width: 20%;
+        border: 1px dashed $color__brand-green;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    h1 {
+        animation: glitch 1s linear infinite;
+        font-size: 5rem;
+        text-shadow: 2.5px 2.5px 5px green;
+    }
+
+    @keyframes glitch {
+
+        2%,
+        64% {
+            transform: translate(2px, 0) skew(0deg);
+        }
+
+        4%,
+        60% {
+            transform: translate(-2px, 0) skew(0deg);
+        }
+
+        62% {
+            transform: translate(0, 0) skew(5deg);
+        }
+    }
+
+    h1:before,
+    div:after {
+        content: attr(title);
+        position: absolute;
+        left: 0;
+    }
+
+    h1:before {
+        animation: glitchTop 1s linear infinite;
+        clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    }
+
+    @keyframes glitchTop {
+
+        2%,
+        64% {
+            transform: translate(2px, -2px);
+        }
+
+        4%,
+        60% {
+            transform: translate(-2px, 2px);
+        }
+
+        62% {
+            transform: translate(13px, -1px) skew(-13deg);
+        }
+    }
+
+    h1:after {
+        animation: glitchBottom 1.5s linear infinite;
+        clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    }
+
+    @keyframes glitchBottom {
+
+        2%,
+        64% {
+            transform: translate(-2px, 0);
+        }
+
+        4%,
+        60% {
+            transform: translate(-2px, 0);
+        }
+
+        62% {
+            transform: translate(-22px, 5px) skew(21deg);
+        }
+    }
+}
+
+.error-404-page-content {
+    margin: 0 auto;
+    flex: 50%;
+    width: 1120px;
+
+    p {
+        font-size: 1.5rem;
+        transform: translate3d(0, 0, 0);
+        color: #3e3e3e;
+        display: block;
+        font: 20px/1 'TeXGyreAdventorBold';
+        text-transform: none;
+        animation: 3s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s 1 normal both running text-focus-in;
+
+        @keyframes text-focus-in {
+            0% {
+                filter: blur(12px);
+                opacity: 0;
+            }
+
+            100% {
+                filter: blur(0);
+                opacity: 1;
+            }
+
+            0% {
+                filter: blur(12px);
+                opacity: 0;
+            }
+
+            100% {
+                filter: blur(0);
+                opacity: 1;
+            }
+        }
+    }
+
+    .search-form {
+        margin-top: $base__space-unit + 1;
+        margin-bottom: $base__space-unit * 2;
+    }
+}
+
+.error-404 {
+    margin-top: $base__space-unit * 4;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+
+
+}
+
+
+
+/* No Content Page for Search Results */
 
 .publish {
     transform: translate3d(0, 0, 0);
