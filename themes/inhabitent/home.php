@@ -8,6 +8,8 @@
 
 get_header(); ?>
 
+
+
 <div id="primary" class="content-area page-journal">
     <main id="main" class="site-main" role="main">
 
@@ -42,10 +44,11 @@ get_header(); ?>
                 <?php the_excerpt(); ?>
             </div><!-- .entry-content -->
 
-            <a class="white-btn">Read More →</a>
+            <a href="<?php esc_url(get_permalink()); ?>" class="white-btn">Read More →</a>
         </article><!-- #post-## -->
 
         <?php endwhile; ?>
+
 
         <?php the_posts_navigation(); ?>
 
@@ -57,6 +60,7 @@ get_header(); ?>
 
     </main><!-- #main -->
 </div><!-- #primary -->
+
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
