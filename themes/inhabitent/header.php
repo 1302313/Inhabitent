@@ -22,31 +22,40 @@
 <body <?php body_class(); ?>>
 	<div id="page" class="hfeed site">
 		<a class="skip-link screen-reader-text" href="#content"><?php echo esc_html('Skip to content'); ?></a>
+
 		<!-- #masthead -->
-		<header id="masthead" class="site-header reverse-header" role="banner">
+		<header id="masthead" class="<?php
+										if (is_page('about') || is_page('front-page')) {
+											echo 'site-header';
+										} else {
+											echo 'reverse-header';
+										}
+										?>" role="banner">
 			<div class="site-header-container">
-				<!-- .site-branding -->
+
+				<!-- (1).site-branding -->
 				<div class="site-branding">
-
 					<div class="logo">
-
-						<a href="https://redacademy.com"></a>
+						<!-- ADD INHAITENT LOGO -->
+						<a href="https://redacademy.com">
+							<h1></h1>
+						</a>
 					</div>
-					<!-- <h1 class="site-title screen-reader-text"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-				<p class="site-description"><?php bloginfo('description'); ?></p> -->
 				</div>
 
-				<!-- #site-navigation -->
+				<!-- (2).main-navigation -->
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo esc_html('Primary Menu'); ?></button>
-					<?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
+					<div class="navigation-bar">
+						<?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
+					</div>
+
+
 				</nav>
-
-				<!-- .site-search-form -->
-
-				<?php get_search_form() ?>
-
+				<div class="header-search-bar">
+					<?php get_search_form() ?>
+				</div>
 			</div>
 		</header>
 
+		<!-- Starting Division of Site Content -->
 		<div id="content" class="site-content">
