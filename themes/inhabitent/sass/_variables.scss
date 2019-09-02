@@ -8,7 +8,7 @@ $base__space-unit: 1.5rem;
 
 // Colors
 
-$color__background-body: #fff;
+$color__background-body: #ffffff;
 $color__text-main: #404040;
 $color__text-footer: #fff;
 $color__text-footer-h3: #d99054;
@@ -16,6 +16,7 @@ $color__text-footer-h3: #d99054;
 $color__brand-green: #248A83;
 $color__brand-purple: #2f1339;
 $color__brand-yellow: #f0e4d1;
+$color__brand-orange: #d99054;
 
 $color__background-screen: #f1f1f1;
 $color__text-screen: #21759b;
@@ -25,11 +26,13 @@ $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 $color__border-abbr: #666;
 
+$base__border: 1px solid #e1e1e1;
+
 $color__link: $color__brand-green;
-$color__link-visited: rgb(40, 182, 173);
+$color__link-visited: $color__brand-green;
 $color__link-hover:$color__brand-purple;
 
-$color__button-hover: rgb(40, 182, 173);
+$color__button-hover: darken($color__brand-green, 10%);
 
 // Typography
 

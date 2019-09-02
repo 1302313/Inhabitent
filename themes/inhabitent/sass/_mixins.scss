@@ -16,11 +16,12 @@
     transform: translate3d(0, 0, 0);
     color: #3e3e3e;
     display: block;
-    font: 60px/1 'TeXGyreAdventorBold';
+    text-align: center;
+    font: 30px/1 'TeXGyreAdventorBold';
     text-transform: none;
     animation: 3s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0s 1 normal both running text-focus-in;
 
-    @keyframes text-in-focus {
+    @keyframes text-focus-in {
         0% {
             filter: blur(12px);
             opacity: 0;
