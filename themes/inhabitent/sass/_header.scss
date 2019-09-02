@@ -1,126 +1,214 @@
 /* Main Header */
-.site-header {
-    background-color: rgba(255, 255, 255, .85);
-    padding: $base__space-unit -0.75 $base__space-unit * 2;
 
-    position: absolute;
-    width: 100%;
+.site-header {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
 
-    .site-branding {
-
-        width: 25%;
-        height: 25%;
-        flex: 25%;
-
-        // justify-self: flex-start;
-    }
+    background-color: transparent;
+    border-bottom: none;
+    padding: ($base__space-unit / 3) 0;
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
 
     .site-header-container {
-
-        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1120px;
 
         display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
         align-items: center;
+        justify-content: space-between;
 
-        /* Site Navigation */
+        .site-branding {
+            .logo {
+                a {
+                    // h1 {
+                    //     color: #248a83;
+                    //     display: block;
+                    //     text-decoration: none;
+                    //     background: url("../images/logos/inhabitent-logo-tent.svg") no-repeat;
+                    //     background-size: 50px 33px;
+                    //     height: 33px;
+                    //     margin: 0;
+                    //     width: 50px;
+                    // }
+                }
+            }
+        }
+
         .main-navigation {
-
-            width: 85%;
-            padding: 0 2rem;
-            flex: 50%;
-            justify-self: flex-end;
-
             display: flex;
             justify-content: flex-end;
 
-            .menu-toggle {
-                margin: 0 auto;
-                background-color: #248A83;
-                border-radius: 1rem 0;
-                color: #2d2d2d;
+
+            .navigation-bar {
+                margin-right: 2rem;
+
+                .menu {
+                    display: block;
+                    list-style: none;
+                    margin: 0;
+                    padding-left: 0;
+                    text-transform: uppercase;
 
 
-                &:hover {}
-            }
+                    li {
+                        padding-left: 1.5rem;
+                        position: relative;
+                        text-shadow: 1px 1px 2px #323232;
 
-            .menu-main-menu-container {
-
-                width: 75%;
-                justify-content: flex-end;
-
-                .nav-menu {
-                    width: 100%;
-                    display: flex;
-                    flex-flow: row wrap;
-                    justify-content: space-between;
-                    align-items: center;
-
-
-                    .menu-item {
-                        display: flex;
-                        align-self: center;
-                        justify-content: flex-end;
+                        a {
+                            color: white;
+                        }
                     }
                 }
             }
         }
 
-        /* Site Search Form */
-        .search-form {
+        .header-search-bar {
+            line-height: 1;
+            padding-left: 1.5rem;
 
-            padding: 0 0.5rem;
-            justify-self: flex-end;
-
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
-            align-items: center;
-
-
-            .search-field {
-                height: 2vh;
-                margin: 0.5rem;
+            .search-form {
                 display: flex;
                 align-items: center;
-                text-indent: 25%;
-                vertical-align: center;
-                background: transparent;
-                border: none;
                 color: #fff;
-                text-shadow: 1px 1px 2px #d99054, 0 0 1em #248A83, 0 0 0.2em #248A83;
-                display: none;
-            }
 
-            .search-field-focus {
-                display: initial;
-            }
-
-            .search-submit {
-
-                position: absolute;
-                transform: translateX(-4rem);
-                margin: 0 auto;
-                border: none;
-                padding: none;
-                box-shadow: none;
-                background: transparent;
-                border-radius: 3rem;
-
-                .icon-search {
-                    padding: 0;
-
-                    i {
-                        padding: 0;
-                    }
+                label {
+                    margin: 0;
                 }
 
+                .search-field {
+                    border: 0;
+                    padding: 0;
+                    background: transparent;
+                    font-family: Novecento Sans Web, sans-serif;
+                    margin-left: .75rem;
+                    padding: 0 .3rem;
+                    text-transform: uppercase;
+                    color: black;
+                    display: none;
+                    overflow: hidden;
+                }
+
+                .search-submit {
+                    background-color: transparent;
+                    padding: 0;
+
+                    span {
+
+
+                        i {
+
+                            a {}
+                        }
+                    }
+                }
             }
         }
     }
+}
 
+// 
+.reverse-header {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    background-color: rgba(255, 255, 255, .85);
+    border-bottom: $base__border;
+    padding: ($base__space-unit / 3) 0;
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+
+    .site-header-container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1120px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .site-branding {
+            .logo {
+                a {
+                    // h1 {
+                    //     color: #248a83;
+                    //     display: block;
+                    //     text-decoration: none;
+                    //     background: url("../images/logos/inhabitent-logo-tent.svg") no-repeat;
+                    //     background-size: 50px 33px;
+                    //     height: 33px;
+                    //     margin: 0;
+                    //     width: 50px;
+                    // }
+                }
+            }
+        }
+
+        .main-navigation {
+            display: flex;
+            justify-content: flex-end;
+
+            .navigation-bar {
+                margin-right: 2rem;
+
+                .menu {
+                    display: block;
+                    list-style: none;
+                    margin: 0;
+                    padding-left: 0;
+                    text-transform: uppercase;
+
+                    li {
+                        padding-left: 1.5rem;
+                        position: relative;
+                    }
+                }
+            }
+        }
+
+        .header-search-bar {
+            line-height: 1;
+            padding-left: 1.5rem;
+
+            .search-form {
+                display: flex;
+                align-items: center;
+                color: $color__brand-purple;
+
+                label {
+                    margin: 0;
+                }
+
+                .search-field {
+                    border: 0;
+                    padding: 0;
+                    background: transparent;
+                    font-family: Novecento Sans Web, sans-serif;
+                    margin-left: .75rem;
+                    padding: 0 .3rem;
+                    text-transform: uppercase;
+                    color: black;
+                    display: none;
+                    overflow: hidden;
+                }
+
+                .search-submit {
+                    background-color: transparent;
+                    padding: 0;
+
+                    span {
+                        color: $color__brand-green;
+
+                        i {}
+                    }
+                }
+            }
+        }
+    }
 }

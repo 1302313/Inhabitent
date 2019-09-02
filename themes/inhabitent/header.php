@@ -37,8 +37,14 @@
 				<div class="site-branding">
 					<div class="logo">
 						<!-- ADD INHAITENT LOGO -->
-						<a href="https://redacademy.com">
-							<h1></h1>
+						<a href="<?php echo home_url() ?>">
+							<img src=" <?php
+										if (is_page('about') || is_page('front-page')) {
+											echo "../inhabitent/images/logos/inhabitent-logo-tent-white.svg";
+										} else {
+											echo "../inhabitent/images/logos/inhabitent-logo-tent.svg";
+										};
+										?> " alt="logo">
 						</a>
 					</div>
 				</div>
@@ -58,4 +64,4 @@
 		</header>
 
 		<!-- Starting Division of Site Content -->
-		<div id="content" class="site-content">
+		<div id="content" class="site-content for-404">
