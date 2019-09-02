@@ -1124,7 +1124,10 @@
 
 /* 404 Page */
 
-.for-404 {
+
+.error-404-page-content {
+    margin: 0 auto;
+    flex: 50%;
     width: 1120px;
 
     select {
@@ -1138,9 +1141,10 @@
         text-decoration: none;
     }
 
+
     h1 {
         animation: glitch 1s linear infinite;
-        font-size: 5rem;
+        font-size: 2.5rem;
         text-shadow: 2.5px 2.5px 5px green;
     }
 
@@ -1213,12 +1217,6 @@
             transform: translate(-22px, 5px) skew(21deg);
         }
     }
-}
-
-.error-404-page-content {
-    margin: 0 auto;
-    flex: 50%;
-    width: 1120px;
 
     p {
         font-size: 1.5rem;
@@ -1255,12 +1253,13 @@
     .search-form {
         margin-top: $base__space-unit + 1;
         margin-bottom: $base__space-unit * 2;
+
     }
 }
 
 .error-404 {
     margin-top: $base__space-unit * 4;
-    margin-left: auto;
+    margin-left: $base__space-unit * 3;
     margin-right: auto;
     width: auto;
 
@@ -1369,9 +1368,80 @@
 
 /*  Single Journal Page */
 
+.single {
+
+    .widget-area {
+        flex: 20%;
+        padding-left: $base__space-unit * 2;
+        padding-top: $base__space-unit * 3;
+        margin-right: $base__space-unit;
+        width: 400px;
+
+    }
+}
+
 .single-journal-container {
     flex: 50%;
-    padding-top: $base__space-unit * 3;
-    padding-left: $base__space-unit * 2;
-    margin-right: auto;
+    padding-top: $base__space-unit * 3.5;
+    padding-right: $base__space-unit * 2;
+    margin-left: $base__space-unit;
+    border-right: 1px solid #8b2020;
+
+    .journal-image-container {
+        position: relative;
+
+        img {
+            width: 90%;
+        }
+
+        h1 {
+            background-color: $color__brand-green;
+            color: #fff;
+            font-size: 2.1rem;
+            left: 0;
+            padding: .75rem 1.5rem;
+            position: absolute;
+            margin-top: 2.25rem;
+            max-width: 70%;
+            top: 0;
+
+            a {
+                &:focus :hover :visited {
+                    color: white;
+                }
+
+                color: #fff;
+                text-decoration: none;
+
+            }
+
+
+        }
+
+        .entry-meta {
+            background-color: $color__brand-green;
+            bottom: 10px;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+            font-family: Novecento Sans Web, sans-serif;
+            padding: 0.5rem 1.5rem;
+            position: absolute;
+            right: 82px;
+            text-transform: uppercase;
+        }
+
+
+    }
+}
+
+.comments-area {
+
+    .comment-author-avatar {
+        img {
+            border-radius: 50px;
+        }
+    }
+
 }
