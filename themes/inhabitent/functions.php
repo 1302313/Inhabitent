@@ -105,6 +105,11 @@ function inhabitent_scripts()
 add_action('wp_enqueue_scripts', 'inhabitent_scripts');
 
 /**
+ * Enqueue custom script for contact form
+ */
+
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
