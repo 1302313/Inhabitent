@@ -28,8 +28,8 @@ get_header(); ?>
 				<!-- Start loop for product type -->
 				<?php foreach ($terms as $term) : ?>
 				<li class="archive-product-taxonomies-list">
-					<a href="<?php get_term_link($term); ?>">
-						<?php strtoupper($term->name); ?>
+					<a href="<?= get_term_link($term); ?>">
+						<?= strtoupper($term->name); ?>
 					</a>
 				</li>
 				<?php endforeach; ?>
